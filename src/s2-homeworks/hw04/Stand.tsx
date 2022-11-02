@@ -7,11 +7,18 @@ import SuperButton from './common/c2-SuperButton/SuperButton'
 const Stand = () => {
     const [stateForAllInputs, setValue] = useState<string>('')
     const [error, setError] = useState<string>('')
-
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
+    const [color, setColor] = useState<string>('');
+    console.log(color);
+    
 
+    const classBgForHw = s.stand 
+    + (color === 'red' ? ' ' + s.red  : '')
+    + (color === 'violet' ? " " + s.violet : '')
+    + (color === 'blue' ? " " + s.blue : '')
+    
     return (
-        <div id={'hw4-stand'} className={s.stand}>
+        <div id={'hw4-stand'} className={classBgForHw}>
             <div className={s.inputs}>
                 {/*совместим со старым кодом:*/}
                 <div>
@@ -43,21 +50,22 @@ const Stand = () => {
             <div className={s.buttons}>
                 {/*обычная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-default'}>
-                        default
+                    <SuperButton id={'hw4-super-button-default'} setColor={setColor} >
+                        Click me pls
                     </SuperButton>
                 </div>
                 {/*красная кнопка:*/}
                 <div>
-                    <SuperButton id={'hw4-super-button-red'} xType={'red'}>
-                        red
+                    <SuperButton id={'hw4-super-button-red'} xType={'red'} setColor={setColor}>
+                    Click me pls
                     </SuperButton>
                 </div>
                 {/*задизэйбленная кнопка:*/}
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
-                        xType={'red'}
+                        xType={'disabled'}
+                        setColor={setColor}
                         disabled
                     >
                         disabled
@@ -67,9 +75,10 @@ const Stand = () => {
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
+                        setColor={setColor}
                         xType={'secondary'}
                     >
-                        secondary
+                        Click me pls
                     </SuperButton>
                 </div>
             </div>
