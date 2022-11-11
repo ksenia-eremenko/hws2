@@ -1,8 +1,28 @@
+.burger {
+    cursor: pointer;
+    border: 0;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #b0d4f8;
+}
+
+.burger:hover {
+    background: #81baf2;
+}
+
 .burgerMenuIcon {
+    width: 20px;
 }
 
 .header {
+    padding: 20px 40px;
 }
 
-.header h1 {
+.header h1:not(:first-child) {
+    margin-top: 20px;
 }
