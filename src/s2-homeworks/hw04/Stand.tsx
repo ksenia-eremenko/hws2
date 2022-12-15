@@ -9,7 +9,6 @@ const Stand = () => {
     const [error, setError] = useState<string>('')
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
     const [color, setColor] = useState<string>('');
-    console.log(color);
     
 
     const classBgForHw = s.stand 

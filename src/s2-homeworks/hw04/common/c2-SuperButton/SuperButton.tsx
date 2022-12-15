@@ -21,7 +21,6 @@ const SuperButton: React.FC<SuperButtonPropsType> = (
 ) => {
 
     const onChangeHandler = () => {
-        console.log(xType);
         if (!xType) {
             setColor?.('violet')
         } else if (xType === 'red') {
