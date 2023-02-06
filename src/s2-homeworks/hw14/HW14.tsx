@@ -13,7 +13,6 @@ import {useSearchParams} from 'react-router-dom'
 * 5 - добавить HW14 в HW5/pages/JuniorPlus
 * */
 
-
 const getTechs = (find: string) => {
     return axios
         .get<{ techs: string[] }>(
@@ -35,13 +34,12 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                if (res?.data?.techs) {
-                    console.log(res)
-                    setTechs(res.data.techs)
-                    setLoading(false)
-                }
                 // делает студент
-
+                
+                if (res?.data?.techs) {
+                    console.log(res.data);
+                    setTechs(res.data.techs)
+                }
                 // сохранить пришедшие данные
 
                 //
@@ -49,12 +47,12 @@ const HW14 = () => {
     }
 
     const onChangeText = (value: string) => {
-        setFind(value)
         
+        setFind(value)
         // делает студент
 
         // добавить/заменить значение в квери урла
-        setSearchParams(find)
+        setSearchParams({find: value})
         // setSearchParams(
 
         //
