@@ -28,7 +28,6 @@ const HW12 = () => {
     const dispatch = useDispatch();
     // взять ид темы из редакса
     const themeId = useSelector<StateType, number>(state => state.theme.themeId)
-        console.log(themeId);
         
     const change = (id: number) => { // дописать функцию
         dispatch(changeThemeId(+id))
